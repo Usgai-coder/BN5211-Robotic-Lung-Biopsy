@@ -110,7 +110,7 @@ if __name__ == "__main__":
         val_df['patient_sex'] = np.random.choice(['Male', 'Female'], size=len(val_df))
     val_df['patient_sex'] = val_df['patient_sex'].apply(lambda x: 'Male' if str(x).upper().startswith('M') else 'Female')
 
-        # 🔥🔥🔥 微小结节惩罚机制 🔥🔥🔥
+    # 🔥🔥🔥 微小结节惩罚机制 🔥🔥🔥
     mask_micro = val_df['diameter'] < 6.0
     num_micro = mask_micro.sum()
     
