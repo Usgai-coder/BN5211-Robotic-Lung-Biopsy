@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import os
 import torch
 
-# 导入你的模型架构和API
+# 导入模型架构和API
 from train_3D_attention import LitAttentionModel
 from inference_api import LungNodulePredictor
 
