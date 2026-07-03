@@ -99,4 +99,4 @@ if __name__ == "__main__":
     plt.savefig(plot_path, dpi=300, bbox_inches='tight')
     plt.close()
     
-    print(f"✅ 临床工作点 ROC 曲线已高清保存至: {plot_path}")
+    print(f"✅ 临床工作点 ROC 曲线已保存至: {plot_path}")
