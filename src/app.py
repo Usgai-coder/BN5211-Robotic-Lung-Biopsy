@@ -79,28 +79,28 @@ if uploaded_files:
             result = predictor.predict_single(temp_path)
             prob_percent = result['malignancy_probability'] * 100
             
-            # 判断临床分级
+            # 🚀 改进：移除 Emoji，换用专业的临床干预纯文本建议
             if prob_percent < 45.0:
-                risk_level = "低风险 (常规随访)"
-                risk_emoji = "🟢"
+                risk_level = "低风险"
+                action_text = "常规年度 LDCT 随访"
             elif 45.0 <= prob_percent <= 70.0:
-                risk_level = "中风险 (建议活检/短随访)"
-                risk_emoji = "🟡"
+                risk_level = "中风险"
+                action_text = "建议穿刺活检或 3 个月内复查"
             else:
-                risk_level = "高风险 (极高疑似，建议靶向药筛查)"
-                risk_emoji = "🔴"
+                risk_level = "高风险"
+                action_text = "建议 MDT 会诊与靶向药物筛查"
                 
             # 记录数据
             record = {
                 "结节编号": file.name,
                 "AI推断恶性概率": f"{prob_percent:.2f}%",
                 "临床风险分级": risk_level,
-                "建议操作": risk_emoji
+                "临床干预建议": action_text
             }
             current_batch_results.append(record)
             st.session_state.diagnosis_history.append(record)
             
-            # 在左侧渲染最后一个图像的预览（如果文件太多，全画出来会卡，画最后一个作为抽样预览）
+            # 在左侧渲染最后一个图像的预览
             with col1:
                 if file == uploaded_files[-1]:
                     st.subheader(f"👁️ 样本切片预览: {file.name}")
