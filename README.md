@@ -70,7 +70,7 @@ Lung-Nodule/
 
 ---
 
-## * 4. 全链路运行指南 (Execution Guide)
+## 4. 全链路运行指南 (Execution Guide)
 为确保整个数据流动管道平滑闭环且表头无污染，请严格按照以下一键通关顺序执行：
 
 **阶段一**：数据清洗与物理空间重构
@@ -131,7 +131,7 @@ streamlit run src/app.py
 
 ---
 
-## * 5. 快速开始与环境配置 (Quick Start)
+## 5. 快速开始与环境配置 (Quick Start)
 
 **1**. 创建并激活纯净虚拟环境
 ```text
@@ -144,5 +144,5 @@ conda activate lung_nodule
 pip install -r requirements.txt
 ```
 
-## * 6. 免责声明 (Disclaimer)
+## 6. 免责声明 (Disclaimer)
 本项目模型及 Web 系统输出的恶性概率与风险分层结果，仅供生物医学工程领域的学术研究、算法验证及演示使用。在任何情况下，均不可替代专业注册放射科医师与肿瘤科医师在真实医疗环境中的最终确诊意见。
